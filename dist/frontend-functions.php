@@ -16,9 +16,9 @@ if (!defined('PAYPAL_POPUP_SECRET') || PAYPAL_POPUP_SECRET !== 'secret_key')
  * @param string $button_text The short call to action for button
  * @param string $paypal_id The account paypal ID
  */
-function payPal_popup($info_text, $button_text, $paypal_id) {
+function payPal_popup() {
     global $PaypalPopup;
 
-    echo $PaypalPopup->renderHTML($info_text, $button_text, $paypal_id);
+    echo $PaypalPopup->renderHTML();
 }
 ?>
