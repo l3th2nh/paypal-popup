@@ -1,0 +1,37 @@
+//
+// PAYPAL POPUP
+// Required style for banner
+//
+// - modules
+// - components
+// ---------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
+
+
+//
+// MODULES
+// ---------------------------------------------------------------------------
+$color-background: #f2f2f2;
+$color-text: #000;
+
+
+//
+// COMPONENTS
+// ---------------------------------------------------------------------------
+.paypal-popup {
+    width: 100%;
+    max-width: 100%;
+    visibility: hidden;
+    opacity: 0;
+    background-color: rgba($color-text, .8);
+    transition: opacity .3s ease;
+
+    &-open {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    &-close {
+        opacity: 0;
+    }
+}
