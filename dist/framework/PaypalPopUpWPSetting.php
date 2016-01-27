@@ -56,7 +56,7 @@ class WPSettingPaypalPopup extends PaypalPopup {
         register_setting('paypal-popup', 'paypalPopup_settingsField_popupMainText');
         add_settings_field(
             'paypalPopup_settingsField_buttonText',
-            __('Popup Main Text', 'paypal-popup'),
+            __('Popup Button Text', 'paypal-popup'),
             array($this, 'paypalPopup_settingsField_buttonText_callback'),
             'paypal-popup',
             'paypalPopup_settingsSection_popupTexts'
