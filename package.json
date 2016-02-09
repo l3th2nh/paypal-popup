@@ -1,0 +1,36 @@
+{
+  "name": "paypal-popup",
+  "version": "0.0.1",
+  "description": "Wordpress plugin for displaing a Paypal Donate popup",
+  "main": "paypal-popup.php",
+  "scripts": {
+    "compress-js": "uglifyjs --mangle --preamble=\"// $npm_package_name - $npm_package_version ($npm_package_homepage)\" source/script/paypal-popup.js > dist/asset/js/paypal-popup.min.js",
+    "compile-sass": "node-sass --output-style compressed --include-path scss source/style/paypal-popup.scss dist/asset/css/paypal-popup.min.css && node-sass --output-style compressed --include-path scss source/style/demo.scss dist/asset/css/demo.min.css",
+    "watch-compile-sass": "nodemon -e scss --watch source/style -x \"npm run compile-sass\"",
+    "watch-compress-js": "nodemon -e js --watch source/script -x \"npm run compress-js\"",
+    "clean": "rm -rf dist/asset/js/* && rm -rf dist/asset/css/*",
+    "watch": "npm run watch-compress-js && npm run watch-compile-sass",
+    "build": "npm run clean && npm run compress-js && npm run compile-sass"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heavybeard/paypal-popup.git"
+  },
+  "keywords": [
+    "paypal",
+    "popup",
+    "wordpress",
+    "plugin"
+  ],
+  "author": "heavybeard <info@heavybeard.it>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/heavybeard/paypal-popup/issues"
+  },
+  "homepage": "https://github.com/heavybeard/paypal-popup#readme",
+  "devDependencies": {
+    "node-sass": "^3.4.2",
+    "nodemon": "^1.8.1",
+    "uglify-js": "^2.6.1"
+  }
+}
