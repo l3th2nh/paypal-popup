@@ -68,17 +68,20 @@ class PaypalPopup {
      * @author Andrea Cognini
      * @description Echo the html on the page
      */
-    public function renderHTML() {
+    public function renderHTML($elementID) {
         $html = '
-            <div id="cb-lwa-paypal" class="cb-lwa-modal cb-modal">
-                <div class="cb-lwa-modal-inner cb-modal-inner cb-light-loader cb-pre-load cb-font-header clearfix">
-                    <div class="lwa lwa-default clearfix" style="text-align: center;">' . get_option('paypalPopup_settingsField_popupMainText') . '
-                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-                            <input type="hidden" name="cmd" value="_s-xclick">
-                            <input type="hidden" name="hosted_button_id" value="' . get_option('paypalPopup_settingsField_paypalID') . '">
-                            <input type="submit" name="submit" class="cb-submit-form" value="' . get_option('paypalPopup_settingsField_buttonText') . '" tabindex="100">
-                            <img alt="" border="0" src="https://www.paypalobjects.com/it_IT/i/scr/pixel.gif" width="1" height="1">
-                        </form>
+            <div id="' . $elementID . '" class="paypal-popup-modal-wrapper paypal-popup-modal-close">
+                <div class="paypal-popup-modal-container">
+                    <div class="paypal-popup-modal-content">
+                        <div class="paypal-popup-modal-content-inner">' . 
+                            get_option('paypalPopup_settingsField_popupMainText') . '
+                            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" class="paypal-popup-form">
+                                <input type="hidden" name="cmd" value="_s-xclick">
+                                <input type="hidden" name="hosted_button_id" value="' . get_option('paypalPopup_settingsField_paypalID') . '">
+                                <input type="submit" name="submit" class="cb-submit-form" value="' . get_option('paypalPopup_settingsField_buttonText') . '" tabindex="100">
+                                <img alt="" border="0" src="https://www.paypalobjects.com/it_IT/i/scr/pixel.gif" width="1" height="1">
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>';

@@ -19,6 +19,6 @@ if (!defined('PAYPAL_POPUP_SECRET') || PAYPAL_POPUP_SECRET !== 'secret_key')
 function payPal_popup() {
     global $PaypalPopup;
 
-    echo $PaypalPopup->renderHTML();
+    echo $PaypalPopup->renderHTML('paypal-popup');
 }
 ?>
